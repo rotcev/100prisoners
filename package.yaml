@@ -1,0 +1,49 @@
+name:                100prisoners
+version:             0.1.0.0
+github:              "githubuser/100prisoners"
+license:             BSD3
+author:              "Author name here"
+maintainer:          "example@example.com"
+copyright:           "2018 Author name here"
+
+extra-source-files:
+- README.md
+- ChangeLog.md
+
+# Metadata used when publishing your package
+# synopsis:            Short description of your package
+# category:            Web
+
+# To avoid duplicated efforts in documentation and dealing with the
+# complications of embedding Haddock markup inside cabal files, it is
+# common to point users to the README.md file.
+description:         Please see the README on GitHub at <https://github.com/githubuser/100prisoners#readme>
+
+dependencies:
+- base >= 4.7 && < 5
+- random-shuffle == 0.0.4
+
+library:
+  source-dirs: src
+
+executables:
+  100prisoners-exe:
+    main:                Main.hs
+    source-dirs:         app
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - 100prisoners
+
+tests:
+  100prisoners-test:
+    main:                Spec.hs
+    source-dirs:         test
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - 100prisoners
